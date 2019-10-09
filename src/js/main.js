@@ -4,6 +4,9 @@ let todoItems = [];
 let todo_unchecked = 'icons/unchecked.png';
 
 function addItem() {
+        if (document.getElementById('addInput').value.trim() == ''){
+            return false;
+        }
 	todoItems.push({
 		'text' : document.getElementById('addInput').value,
 		'checked' : false,
