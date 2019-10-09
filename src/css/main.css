@@ -1,0 +1,142 @@
+
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+form {
+	/* This bit sets up the horizontal layout */
+	display:flex;
+	flex-direction:row;	
+	padding:2px;
+  }
+
+li {
+	list-style-type: none;
+}
+#addItemBtn:hover {
+	background-color: Transparent;
+	background-image: url('../icons/chevron-arrow-up-hover.png');
+	background-repeat: no-repeat;
+	background-size: 17px, 17px;
+	background-position: center;
+}
+
+#addItemBtn {
+	width: 5vh;
+	height: 5vh;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+	background-color: Transparent;
+	background-image: url('../icons/chevron-arrow-up.png');
+	background-repeat: no-repeat;
+	background-size: 17px, 17px;
+	background-position: center;
+}
+
+#todoItems_ul {
+	margin-top: 2vh;
+	width: 80vw;
+}
+table {
+	border: none;
+}
+.todoItem {
+	height: 5vh;
+}
+.todoItem:hover {
+	background-color: #f3f3f3;
+}
+
+.todoText {
+	font-family: 'Arvo', serif;
+	padding-left: 2vh;
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+	max-width: 60vw;
+	overflow-x: hidden;
+
+}
+.todo_img {
+	float: right;
+	width: 3vh;
+	height: 3vh;
+	margin-right: 1vw;
+}
+
+.checked {
+	background-color: Transparent;
+	background-image: url('../icons/checked.png');
+	background-repeat: no-repeat;
+	background-size: 3vh, 3vh;
+	background-position: center;
+}
+.unchecked {
+	background-color: Transparent;
+	background-image: url('../icons/unchecked.png');
+	background-repeat: no-repeat;
+	background-size: 3vh, 3vh;
+	background-position: center;
+}
+
+
+
+.delete_btn {
+	float: right;
+	width: 3vh;
+	height: 3vh;
+	margin-right: 1vw;
+	background-color: Transparent;
+	background-image: url('../icons/garbage.png');
+	background-repeat: no-repeat;
+	background-size: 3vh, 3vh;
+	background-position: center;
+}
+
+.delete_btn:hover {
+	background-image: url('../icons//garbage-hover.png');
+}
+
+.add_input {
+	/* Tell the input to use all the available space */
+	flex-grow:2;
+	/* And hide the input's outline, so the form looks like the outline */
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	border-bottom: 5px, solid;
+	margin-top: 1vh;
+	width: 80vw;
+	height: 5vh;
+	font-family: 'Arvo', serif;
+	font-size: 15px;
+  }
+  
+.add_input:focus {
+	outline: none;
+	border-color: #0096ff;
+}
+
+  
+
+.background {
+	background-color: #fff;
+	box-shadow: 0px 6px 15px 0 rgba(207, 211, 218, 0.35);
+	margin-left: 5vw;
+	margin-top: 5vh;
+	width: 80vw;
+	height: auto;
+	padding-top: 5vh;
+	padding-right: 5vw;
+	padding-left: 5vw;
+	padding-bottom: 5vw;
+	border-radius: 30px;
+}
+
+.todo_container {
+	width: 80vw;
+	height: auto;
+}
