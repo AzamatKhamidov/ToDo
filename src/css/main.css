@@ -41,11 +41,12 @@ li {
 	margin-top: 2vh;
 	width: 80vw;
 }
+
 table {
 	border: none;
 }
 .todoItem {
-	height: 5vh;
+	min-height: 5vh;
 }
 .todoItem:hover {
 	background-color: #f3f3f3;
@@ -54,11 +55,11 @@ table {
 .todoText {
 	font-family: 'Arvo', serif;
 	padding-left: 2vh;
+	overflow: auto;
 	padding-top: 2vh;
 	padding-bottom: 2vh;
-	max-width: 60vw;
-	overflow-x: hidden;
-
+	max-width: 40vw;
+	height: auto;
 }
 .todo_img {
 	float: right;
@@ -87,6 +88,7 @@ table {
 .delete_btn {
 	float: right;
 	width: 3vh;
+	display: none;
 	height: 3vh;
 	margin-right: 1vw;
 	background-color: Transparent;
@@ -95,9 +97,58 @@ table {
 	background-size: 3vh, 3vh;
 	background-position: center;
 }
+.edit_btn:hover {
+	background-image: url('../icons/edit-hover.png');
+}
+.edited_btn:hover {
+	background-image: url('../icons/edited-hover.png');
+}
 
+.edited_btn {
+	float: right;
+	width: 3vh;
+	height: 3vh;
+	margin-right: 1vw;
+	background-color: Transparent;
+	background-image: url('../icons/edited.png');
+	background-repeat: no-repeat;
+	background-size: 3vh, 3vh;
+	background-position: center;
+}
+.edit_btn {
+	display: none;
+	float: right;
+	width: 3vh;
+	height: 3vh;
+	margin-right: 1vw;
+	background-color: Transparent;
+	background-image: url('../icons/edit.png');
+	background-repeat: no-repeat;
+	background-size: 3vh, 3vh;
+	background-position: center;
+}
 .delete_btn:hover {
 	background-image: url('../icons//garbage-hover.png');
+}
+
+.editText:focus{
+	background-color: #f3f3f3;
+}
+.editText {
+	/* Tell the input to use all the available space */
+	flex-grow:2;
+	/* And hide the input's outline, so the form looks like the outline */
+	border-right-width: 0px;
+	border-top-width: 0px;
+	border-left-width: 0px;
+	background-color: #f3f3f3;
+
+	border-bottom-width: 0px;
+	margin-top: 1vh;
+	width: 50vw;
+	height: 3vh;
+	font-family: 'Arvo', serif;
+	font-size: 15px;	
 }
 
 .add_input {
@@ -140,3 +191,4 @@ table {
 	width: 80vw;
 	height: auto;
 }
+
