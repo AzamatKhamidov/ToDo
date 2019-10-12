@@ -47,12 +47,12 @@ def generate_password(m):
 def generate_code(connector, checker, length, check_lower=False):
 	code = make_code(1, length)[0]
 	if check_lower:
-		if not checker_in_mongo(connector, {checker : code.lower()}):
+		if not(checker_in_mongo(connector, {checker : code.lower()})):
 			return code
 	else:
-		if not checker_in_mongo(connector, {checker : code}):
+		if not(checker_in_mongo(connector, {checker : code})):
 			return code
-	generate_code(connector, checker, length)
+	generate_code(connector, checker, length, check_lower)
 
 def make_code(n, m):
     pass8 = []
@@ -65,19 +65,19 @@ def make_code(n, m):
 
 def checker_in_mongo(connector, data):
 	try:
-		database.get_info(connector, data)
+		database.get_info(connector, data)[0]
 		return True
 	except:
 		return False
 
 def newToDoItem(user_key, name, tag):
 	return {
+		'_id' : generate_code(config.todoItems, '_id', 32),
 		'user_key' : user_key,
 		'name' : name,
 		'tag' : tag,
 		'parent_tag' : tag,
 		'check' : False,
-		'item_id' : generate_code(config.todoItems, 'item_id', 32)
 	}
 
 def newUser(user_key):
